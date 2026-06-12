@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_dedicated_cpu_counter_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_dedicated_cpu_counter" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="140001fs"></ZoomEndTime>
+      <Cursor1Time time="140000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="155"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="5" />
+   <wvobject fp_name="/tb_dedicated_cpu_counter/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_dedicated_cpu_counter/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_dedicated_cpu_counter/out" type="array">
+      <obj_property name="ElementShortName">out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group84" type="group">
+      <obj_property name="label">control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_CONTROL_UNIT/eq9" type="logic">
+         <obj_property name="ElementShortName">eq9</obj_property>
+         <obj_property name="ObjectShortName">eq9</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_CONTROL_UNIT/asrc_sel" type="logic">
+         <obj_property name="ElementShortName">asrc_sel</obj_property>
+         <obj_property name="ObjectShortName">asrc_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_CONTROL_UNIT/areg_load" type="logic">
+         <obj_property name="ElementShortName">areg_load</obj_property>
+         <obj_property name="ObjectShortName">areg_load</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_CONTROL_UNIT/out_sel" type="logic">
+         <obj_property name="ElementShortName">out_sel</obj_property>
+         <obj_property name="ObjectShortName">out_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_CONTROL_UNIT/c_state" type="array">
+         <obj_property name="ElementShortName">c_state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">c_state[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group85" type="group">
+      <obj_property name="label">data_path</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_DATAPATH/mux_out" type="array">
+         <obj_property name="ElementShortName">mux_out[7:0]</obj_property>
+         <obj_property name="ObjectShortName">mux_out[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_DATAPATH/reg_out" type="array">
+         <obj_property name="ElementShortName">reg_out[7:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_out[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_DATAPATH/alu_result" type="array">
+         <obj_property name="ElementShortName">alu_result[7:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_dedicated_cpu_counter/dut/U_DATAPATH/eq9" type="logic">
+         <obj_property name="ElementShortName">eq9</obj_property>
+         <obj_property name="ObjectShortName">eq9</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

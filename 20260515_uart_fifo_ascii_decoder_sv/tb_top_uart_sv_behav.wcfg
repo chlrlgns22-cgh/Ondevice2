@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_uart_sv_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_ascii_decoder_sv_sv " />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="tb_top_uart_sv" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="167fs"></ZoomEndTime>
+      <Cursor1Time time="26fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="158"></NameColumnWidth>
+      <ValueColumnWidth column_width="63"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/rx" type="logic">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/tx" type="logic">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/rx_data" type="array">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/rx_done" type="logic">
+      <obj_property name="ElementShortName">rx_done</obj_property>
+      <obj_property name="ObjectShortName">rx_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/uart_R" type="logic">
+      <obj_property name="ElementShortName">uart_R</obj_property>
+      <obj_property name="ObjectShortName">uart_R</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/uart_L" type="logic">
+      <obj_property name="ElementShortName">uart_L</obj_property>
+      <obj_property name="ObjectShortName">uart_L</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/uart_U" type="logic">
+      <obj_property name="ElementShortName">uart_U</obj_property>
+      <obj_property name="ObjectShortName">uart_U</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/uart_D" type="logic">
+      <obj_property name="ElementShortName">uart_D</obj_property>
+      <obj_property name="ObjectShortName">uart_D</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/uart_M" type="logic">
+      <obj_property name="ElementShortName">uart_M</obj_property>
+      <obj_property name="ObjectShortName">uart_M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_uart_sv/uart_if/uart_S" type="logic">
+      <obj_property name="ElementShortName">uart_S</obj_property>
+      <obj_property name="ObjectShortName">uart_S</obj_property>
+   </wvobject>
+   <wvobject fp_name="group438" type="group">
+      <obj_property name="label">FIFO_RX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/push_data" type="array">
+         <obj_property name="ElementShortName">push_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">push_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/push" type="logic">
+         <obj_property name="ElementShortName">push</obj_property>
+         <obj_property name="ObjectShortName">push</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/pop" type="logic">
+         <obj_property name="ElementShortName">pop</obj_property>
+         <obj_property name="ObjectShortName">pop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/pop_data" type="array">
+         <obj_property name="ElementShortName">pop_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">pop_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/full" type="logic">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/U_REG_FILE/waddr" type="array">
+         <obj_property name="ElementShortName">waddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">waddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/U_REG_FILE/raddr" type="array">
+         <obj_property name="ElementShortName">raddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">raddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_RX/U_REG_FILE/register_file" type="array">
+         <obj_property name="ElementShortName">register_file[0:15][7:0]</obj_property>
+         <obj_property name="ObjectShortName">register_file[0:15][7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group460" type="group">
+      <obj_property name="label">FIFO_TX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/push_data" type="array">
+         <obj_property name="ElementShortName">push_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">push_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/push" type="logic">
+         <obj_property name="ElementShortName">push</obj_property>
+         <obj_property name="ObjectShortName">push</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/pop" type="logic">
+         <obj_property name="ElementShortName">pop</obj_property>
+         <obj_property name="ObjectShortName">pop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/pop_data" type="array">
+         <obj_property name="ElementShortName">pop_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">pop_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/full" type="logic">
+         <obj_property name="ElementShortName">full</obj_property>
+         <obj_property name="ObjectShortName">full</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/U_REG_FILE/waddr" type="array">
+         <obj_property name="ElementShortName">waddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">waddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/U_REG_FILE/raddr" type="array">
+         <obj_property name="ElementShortName">raddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">raddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_FIFO_TX/U_REG_FILE/register_file" type="array">
+         <obj_property name="ElementShortName">register_file[0:15][7:0]</obj_property>
+         <obj_property name="ObjectShortName">register_file[0:15][7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group427" type="group">
+      <obj_property name="label">UART</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/tx_start" type="logic">
+         <obj_property name="ElementShortName">tx_start</obj_property>
+         <obj_property name="ObjectShortName">tx_start</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/tx_data" type="array">
+         <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/rx" type="logic">
+         <obj_property name="ElementShortName">rx</obj_property>
+         <obj_property name="ObjectShortName">rx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/rx_data" type="array">
+         <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/rx_done" type="logic">
+         <obj_property name="ElementShortName">rx_done</obj_property>
+         <obj_property name="ObjectShortName">rx_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/tx_busy" type="logic">
+         <obj_property name="ElementShortName">tx_busy</obj_property>
+         <obj_property name="ObjectShortName">tx_busy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/tx" type="logic">
+         <obj_property name="ElementShortName">tx</obj_property>
+         <obj_property name="ObjectShortName">tx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_UART_TOP/w_b_tick" type="logic">
+         <obj_property name="ElementShortName">w_b_tick</obj_property>
+         <obj_property name="ObjectShortName">w_b_tick</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group449" type="group">
+      <obj_property name="label">ASCII_DECODER</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/pop_data" type="array">
+         <obj_property name="ElementShortName">pop_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">pop_data[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/empty" type="logic">
+         <obj_property name="ElementShortName">empty</obj_property>
+         <obj_property name="ObjectShortName">empty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/uart_R" type="logic">
+         <obj_property name="ElementShortName">uart_R</obj_property>
+         <obj_property name="ObjectShortName">uart_R</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/uart_L" type="logic">
+         <obj_property name="ElementShortName">uart_L</obj_property>
+         <obj_property name="ObjectShortName">uart_L</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/uart_U" type="logic">
+         <obj_property name="ElementShortName">uart_U</obj_property>
+         <obj_property name="ObjectShortName">uart_U</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/uart_D" type="logic">
+         <obj_property name="ElementShortName">uart_D</obj_property>
+         <obj_property name="ObjectShortName">uart_D</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/uart_M" type="logic">
+         <obj_property name="ElementShortName">uart_M</obj_property>
+         <obj_property name="ObjectShortName">uart_M</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_uart_sv/dut_top_uart/U_ASCII_DECODER/uart_S" type="logic">
+         <obj_property name="ElementShortName">uart_S</obj_property>
+         <obj_property name="ObjectShortName">uart_S</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
