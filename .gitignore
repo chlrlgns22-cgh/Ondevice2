@@ -1,0 +1,67 @@
+# Vivado generated build directories
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+
+# Vivado logs & journals
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.wdf
+*.wpc
+
+# Bitstream & programming files
+*.bit
+*.ltx
+*.xsa
+*.mcs
+*.prm
+*.bin
+*.dcp
+
+# Simulation objects
+*.obj
+*.win64.obj
+*.sdb
+*.rlx
+*.rtti
+*.svtype
+*.type
+*.xdbg
+*.dbg
+*.mem
+*.reloc
+*.ini
+xsim.dir/
+
+# Reports
+*.rpt
+*.rpx
+*.vdi
+*.vds
+
+# Vivado backup & misc
+*.bak
+*.wcfg
+webtalk/
+webtalk_pa.xml
+usage_statistics_webtalk.*
+ISEWrap.*
+rundef.js
+runme.*
+gen_run.xml
+htr.txt
+.jobs/
+.Xil/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+*.zip

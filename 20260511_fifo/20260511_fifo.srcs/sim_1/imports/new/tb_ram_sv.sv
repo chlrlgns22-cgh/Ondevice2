@@ -1,0 +1,208 @@
+`timescale 1ns / 1ps
+
+class transaction;
+    rand bit [7:0] push_data;
+    rand bit       push;
+    rand bit       pop;
+    bit      [7:0] pop_data;
+    bit            full;
+    bit            empty;
+
+    function debug_print(string name);
+        begin
+            $display(
+                "%t : [%s] push = %d, pop = %d, push_data = %d, pop_data= %d, full=%d, empty=%d ",
+                $time, name, push, pop, push_data, pop_data, full, empty);
+        end
+    endfunction
+endclass
+
+interface ram_interface;
+    logic       clk;
+    logic       rst;
+    logic [7:0] push_data;
+    logic       push;
+    logic       pop;
+    logic [7:0] pop_data;
+    logic       full;
+    logic       empty;
+endinterface
+
+
+class generator;
+    transaction tr;
+    mailbox #(transaction) gen2drv_mbox;
+    event event_gen_next;
+
+    function new(mailbox#(transaction) gen2drv_mbox, event event_gen_next);
+        this.gen2drv_mbox   = gen2drv_mbox;
+        this.event_gen_next = event_gen_next;
+    endfunction
+    task run(int count);
+        repeat (count) begin
+            tr = new;
+            // assertion
+            assert (tr.randomize())
+            else $error("[GEN] tr. randomize() error!");
+
+            gen2drv_mbox.put(tr);
+            tr.debug_print("GEN");
+            @(event_gen_next);
+        end
+    endtask
+endclass
+
+class driver;
+    transaction tr;
+    mailbox #(transaction) gen2drv_mbox;
+    virtual ram_interface ram_vif;
+
+    function new(mailbox#(transaction) gen2drv_mbox,
+                 virtual ram_interface ram_vif);
+        this.gen2drv_mbox = gen2drv_mbox;
+        this.ram_vif = ram_vif;
+    endfunction
+    task run();
+        forever begin
+            gen2drv_mbox.get(tr);
+            tr.debug_print("DRV");
+            @(posedge ram_vif.clk);
+            #1;
+            ram_vif.addr = tr.addr;
+            ram_vif.wdata = tr.wdata;
+            ram_vif.we = tr.we;
+        end
+    endtask
+    task preset();
+        ram_vif.addr = 0;
+        ram_vif.wdata = 0;
+        ram_vif.we = 0;
+        @(posedge ram_vif.clk);
+    endtask
+endclass
+
+class monitor;
+    transaction tr;
+    mailbox #(transaction) mon2scb_mbox;
+    virtual ram_interface ram_vif;
+
+    function new(mailbox#(transaction) mon2scb_mbox,
+                 virtual ram_interface ram_vif);
+        this.mon2scb_mbox = mon2scb_mbox;
+        this.ram_vif = ram_vif;
+    endfunction
+    task run();
+        forever begin
+            @(posedge ram_vif.clk);
+            tr = new;
+            tr.addr = ram_vif.addr;
+            tr.wdata = ram_vif.wdata;
+            tr.we = ram_vif.we;
+            tr.rdata = ram_vif.rdata;
+            mon2scb_mbox.put(tr);
+            tr.debug_print("MON");
+        end
+    endtask
+endclass
+
+class scoreboard;
+    transaction tr;
+    mailbox #(transaction) mon2scb_mbox;
+    event event_gen_next;
+    int total_cnt = 0, pass_cnt = 0, fail_cnt = 0;
+
+    byte mem[256];
+
+    function new(mailbox#(transaction) mon2scb_mbox, event event_gen_next);
+        this.mon2scb_mbox   = mon2scb_mbox;
+        this.event_gen_next = event_gen_next;
+    endfunction
+
+    task run();
+        forever begin
+            mon2scb_mbox.get(tr);
+            tr.debug_print("SCB");
+            total_cnt++;
+            //pass fail
+            if (tr.we) begin  //write senario
+                mem[tr.addr] = tr.wdata;
+            end else begin
+                if (tr.rdata == mem[tr.addr]) begin
+                    pass_cnt++;
+                    $display("%t : PASS", $time);
+                end else begin
+                    fail_cnt++;
+                    $display("%t : FAIL addr = %d, rdata = %d, compare data",
+                             $time, tr.addr, tr.rdata, mem[tr.addr]);
+                end
+            end
+            ->event_gen_next;
+        end
+    endtask
+endclass
+
+class environment;
+    generator gen;
+    driver drv;
+    monitor mon;
+    scoreboard scb;
+    mailbox #(transaction) mon2scb_mbox;
+    mailbox #(transaction) gen2drv_mbox;
+    event event_gen_next;
+
+
+    function new(virtual ram_interface ram_vif);
+        gen2drv_mbox = new;
+        mon2scb_mbox = new;
+        gen = new(gen2drv_mbox, event_gen_next);
+        drv = new(gen2drv_mbox, ram_vif);
+        mon = new(mon2scb_mbox, ram_vif);
+        scb = new(mon2scb_mbox, event_gen_next);
+    endfunction
+
+    task run();
+        // ram interface preset
+        drv.preset();
+        fork
+            gen.run(20);
+            drv.run();
+            mon.run();
+            scb.run();
+        join_any
+        #10;
+        $display("env run task end");
+
+        $display("_________________________________");
+        $display("** SRAM IP VERIFICATAION **");
+        $display("**** total test num = %2d ****", scb.total_cnt);
+        $display("**** pass test num = %2d ****", scb.pass_cnt);
+        $display("**** fail test num = %2d ****", scb.fail_cnt);
+        $display("__________________________________");
+
+
+
+        $stop;
+    endtask
+endclass
+
+module tb_ram_sv ();
+    fifo_interface ram_if ();
+    environment env;
+    fifo_sv dut (
+        .clk(ram_if.clk),
+        .rst(ram_if.rst),
+        .push_data(ram_if.push_data),
+        .push(ram_if.push),
+        .pop(ram_if.pop),
+        .pop_data(ram_if.pop_data),
+        .full(ram_if.full),
+        .empty(ram_if.empty)
+    );
+
+    always #5 ram_if.clk = ~ram_if.clk;
+    initial begin
+        ram_if.clk = 0;
+        env = new(ram_if);
+        env.run();
+    end
+endmodule

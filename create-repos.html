@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Repository Creator</title>
+    <style>
+        body { font-family: Arial; max-width: 1200px; margin: 20px; }
+        h1 { color: #333; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; }
+        .repo-link { 
+            padding: 15px; 
+            background: #f0f0f0; 
+            border-radius: 5px; 
+            text-decoration: none;
+            color: #0366d6;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .repo-link:hover { 
+            background: #e8e8e8;
+            border-color: #0366d6;
+        }
+        .copy-btn {
+            background: #0366d6;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .copy-btn:hover { background: #0256a8; }
+        .success { color: green; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>🚀 GitHub Repository Creator</h1>
+    <p>각 저장소 링크를 클릭하면 GitHub에서 자동으로 저장소 생성 페이지가 열립니다.</p>
+    <p><strong>각 페이지에서 "Create repository" 버튼을 클릭하면 저장소가 생성됩니다.</strong></p>
+    <hr>
+    
+    <div class="container" id="repos"></div>
+
+    <script>
+        const repos = [
+            "202260421_UART",
+            "20250519_RV32I_Multi_APB",
+            "20260406_gates",
+            "20260407_adder",
+            "20260409_countter_10000",
+            "20260413_fsm_led",
+            "20260415_pratice",
+            "20260416_stop_watch",
+            "20260424_uart_tx",
+            "20260428_fifo",
+            "20260428_register",
+            "20260429_sr04",
+            "20260429_uart_fifo_stopwatch",
+            "20260429_uart_loopback",
+            "20260430_dht11",
+            "20260507_adder_sv",
+            "20260508_register_8",
+            "20260511_fifo",
+            "20260511_SRAM",
+            "20260512_fifo",
+            "20260514_dedicated_cpu_counter",
+            "20260515_dedicated_cpu_sum_0to10",
+            "20260515_uart_fifo_ascii_decoder_sv",
+            "20260519_RV32I",
+            "20260528_RV32I_MultiCycle",
+            "20260601_OOP_SV_Test",
+            "20260601_OOP_Test",
+            "ComPortMaster",
+            "non_overlapping_seq_detect_1010",
+            "project2_uart_stopwatch_watch",
+            "signed",
+            "source",
+            "uart_text"
+        ];
+
+        const container = document.getElementById("repos");
+        repos.forEach(repo => {
+            const url = `https://github.com/new?repository_name=${repo}&private=true`;
+            const link = document.createElement("a");
+            link.className = "repo-link";
+            link.target = "_blank";
+            link.href = url;
+            link.innerHTML = `
+                <span>${repo}</span>
+                <button class="copy-btn" onclick="event.preventDefault(); window.open('${url}', '_blank');">Open</button>
+            `;
+            container.appendChild(link);
+        });
+    </script>
+</body>
+</html>
