@@ -63,3 +63,4 @@ desktop.ini
 # VS Code
 .vscode/
 *.zip
+*.sim/sim_1/

@@ -28,4 +28,11 @@ module I2C_Master (
         DATA_ACK,
         STOP
     } i2c_state_e;
+
+    i2c_state_e state;
+
+    logic [7:0] div_cnt;
+    logic qtr_tick;  // 1/4 SCL 주기마다 1clk 펄스
+    logic scl_r, sda_r;
+    logic [1:0] step;
 endmodule
