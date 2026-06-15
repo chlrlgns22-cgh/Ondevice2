@@ -33,7 +33,7 @@ module master_top (
 );
 
     master_watch_ip #(
-        .CLK_DIV (8'd4)
+        .CLK_DIV (8'd24)
     ) U_MASTER_WATCH_IP (
         .clk     (clk),
         .rst     (rst),

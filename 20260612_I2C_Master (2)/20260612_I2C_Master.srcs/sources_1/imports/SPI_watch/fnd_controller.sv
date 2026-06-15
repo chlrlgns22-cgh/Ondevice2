@@ -1,10 +1,4 @@
 `timescale 1ns / 1ps
-// ============================================================
-//  fnd_control.v  (Verilog)
-//  Watch 전용 FND 컨트롤러
-//  sw=0: msec/sec 표시  |  sw=1: min/hour 표시
-//  편집 모드(h/m/s 활성)에서는 해당 자리 깜박임
-// ============================================================
 
 module fnd_controller #(
     parameter MSEC_WIDTH = 7,
@@ -12,39 +6,39 @@ module fnd_controller #(
     MIN_WIDTH = 6,
     HOUR_WIDTH = 5
 ) (
-    input  wire                  clk,
-    input  wire                  rst,
-    input  wire                  sw,        // 0: msec/sec, 1: min/hour
-    input  wire [MSEC_WIDTH-1:0] msec,
-    input  wire [ SEC_WIDTH-1:0] sec,
-    input  wire [ MIN_WIDTH-1:0] min,
-    input  wire [HOUR_WIDTH-1:0] hour,
-    input  wire                  h,         // HOUR 편집 중
-    input  wire                  m,         // MIN  편집 중
-    input  wire                  s,         // SEC  편집 중
-    output wire [           3:0] fnd_com,
-    output wire [           7:0] fnd_data,
-    output wire                  led        // 1: min/hour 면 표시 중
+    input  logic                  clk,
+    input  logic                  rst,
+    input  logic                  sw,        
+    input  logic [MSEC_WIDTH-1:0] msec,
+    input  logic [ SEC_WIDTH-1:0] sec,
+    input  logic [ MIN_WIDTH-1:0] min,
+    input  logic [HOUR_WIDTH-1:0] hour,
+    input  logic                  h,         
+    input  logic                  m,         
+    input  logic                  s,         
+    output logic [           3:0] fnd_com,
+    output logic [           7:0] fnd_data,
+    output logic                  led        
 );
 
     // ── digit splitter 출력 ──────────────────────────────────
-    wire [3:0] w_msec_d1, w_msec_d10;
-    wire [3:0] w_sec_d1, w_sec_d10;
-    wire [3:0] w_min_d1, w_min_d10;
-    wire [3:0] w_hour_d1, w_hour_d10;
+    logic [3:0] w_msec_d1, w_msec_d10;
+    logic [3:0] w_sec_d1, w_sec_d10;
+    logic [3:0] w_min_d1, w_min_d10;
+    logic [3:0] w_hour_d1, w_hour_d10;
 
     // ── blink 적용 후 ────────────────────────────────────────
-    wire [3:0] w_sec_d1_bl, w_sec_d10_bl;
-    wire [3:0] w_min_d1_bl, w_min_d10_bl;
-    wire [3:0] w_hour_d1_bl, w_hour_d10_bl;
+    logic [3:0] w_sec_d1_bl, w_sec_d10_bl;
+    logic [3:0] w_min_d1_bl, w_min_d10_bl;
+    logic [3:0] w_hour_d1_bl, w_hour_d10_bl;
 
     // ── 내부 와이어 ──────────────────────────────────────────
-    wire [2:0] w_digit_sel;
-    wire [2:0] w_blink_sel;
-    wire [3:0] w_out_msec_sec, w_out_min_hour, w_out_mux;
-    wire w_1khz, w_comp, w_sel;
-    wire [3:0] w_f;
-    wire [3:0] w_111comp;
+    logic [2:0] w_digit_sel;
+    logic [2:0] w_blink_sel;
+    logic [3:0] w_out_msec_sec, w_out_min_hour, w_out_mux;
+    logic w_1khz, w_comp, w_sel;
+    logic [3:0] w_f;
+    logic [3:0] w_111comp;
     assign w_f       = 4'hF;
     assign w_111comp = {3'b111, w_comp};
 
@@ -205,11 +199,11 @@ endmodule
 // ── 하위 모듈 ────────────────────────────────────────────────
 
 module sel_fix (
-    input  wire sw,
+    input  logic sw,
     h,
     m,
     s,
-    output reg  sel_out
+    output logic  sel_out
 );
     always @(*) begin
         if ((h | m | s) == 1'b0) sel_out = sw;
@@ -219,50 +213,50 @@ module sel_fix (
 endmodule
 
 module comparator (
-    input  wire [6:0] i_comp,
-    output wire       o_comp
+    input  logic [6:0] i_comp,
+    output logic       o_comp
 );
     assign o_comp = (i_comp > 7'd49);
 endmodule
 
 module clk_div_1khz (
-    input  wire clk,
+    input  logic clk,
     rst,
-    output wire o_1khz
+    output logic o_1khz
 );
-    reg [15:0] counter_reg;
-    reg        o_1khz_reg;
-    assign o_1khz = o_1khz_reg;
+    logic [15:0] counter_logic;
+    logic        o_1khz_logic;
+    assign o_1khz = o_1khz_logic;
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            counter_reg <= 16'd0;
-            o_1khz_reg  <= 1'b0;
+            counter_logic <= 16'd0;
+            o_1khz_logic  <= 1'b0;
         end else begin
-            counter_reg <= counter_reg + 1;
-            if (counter_reg == (50_000 - 1)) begin
-                counter_reg <= 16'd0;
-                o_1khz_reg  <= ~o_1khz_reg;
+            counter_logic <= counter_logic + 1;
+            if (counter_logic == (50_000 - 1)) begin
+                counter_logic <= 16'd0;
+                o_1khz_logic  <= ~o_1khz_logic;
             end
         end
     end
 endmodule
 
 module counter_8 (
-    input  wire       clk,
+    input  logic       clk,
     rst,
-    output wire [2:0] digit_sel
+    output logic [2:0] digit_sel
 );
-    reg [2:0] counter_reg;
-    assign digit_sel = counter_reg;
+    logic [2:0] counter_logic;
+    assign digit_sel = counter_logic;
     always @(posedge clk or posedge rst) begin
-        if (rst) counter_reg <= 3'd0;
-        else counter_reg <= counter_reg + 1;
+        if (rst) counter_logic <= 3'd0;
+        else counter_logic <= counter_logic + 1;
     end
 endmodule
 
 module decoder_2x4 (
-    input  wire [1:0] decoder_in,
-    output reg  [3:0] decoder_out
+    input  logic [1:0] decoder_in,
+    output logic  [3:0] decoder_out
 );
     always @(*) begin
         case (decoder_in)
@@ -278,16 +272,16 @@ endmodule
 module digit_splitter #(
     parameter BIT_WIDTH = 7
 ) (
-    input  wire [BIT_WIDTH-1:0] digit_in,
-    output wire [          3:0] digit_1,
-    output wire [          3:0] digit_10
+    input  logic [BIT_WIDTH-1:0] digit_in,
+    output logic [          3:0] digit_1,
+    output logic [          3:0] digit_10
 );
     assign digit_1  = digit_in % 10;
     assign digit_10 = (digit_in / 10) % 10;
 endmodule
 
 module mux_8x1 (
-    input  wire [3:0] in0,
+    input  logic [3:0] in0,
     in1,
     in2,
     in3,
@@ -295,38 +289,38 @@ module mux_8x1 (
     in5,
     in6,
     in7,
-    input  wire [2:0] sel,
-    output wire [3:0] out_mux
+    input  logic [2:0] sel,
+    output logic [3:0] out_mux
 );
-    reg [3:0] out_reg;
-    assign out_mux = out_reg;
+    logic [3:0] out_logic;
+    assign out_mux = out_logic;
     always @(*) begin
         case (sel)
-            3'b000:  out_reg = in0;
-            3'b001:  out_reg = in1;
-            3'b010:  out_reg = in2;
-            3'b011:  out_reg = in3;
-            3'b100:  out_reg = in4;
-            3'b101:  out_reg = in5;
-            3'b110:  out_reg = in6;
-            3'b111:  out_reg = in7;
-            default: out_reg = 4'b0000;
+            3'b000:  out_logic = in0;
+            3'b001:  out_logic = in1;
+            3'b010:  out_logic = in2;
+            3'b011:  out_logic = in3;
+            3'b100:  out_logic = in4;
+            3'b101:  out_logic = in5;
+            3'b110:  out_logic = in6;
+            3'b111:  out_logic = in7;
+            default: out_logic = 4'b0000;
         endcase
     end
 endmodule
 
 module mux_2x1 (
-    input  wire [3:0] in0,
+    input  logic [3:0] in0,
     in1,
-    input  wire       sel,
-    output wire [3:0] out_mux
+    input  logic       sel,
+    output logic [3:0] out_mux
 );
     assign out_mux = sel ? in1 : in0;
 endmodule
 
 module bcd (
-    input  wire [3:0] bin,
-    output reg  [7:0] bcd_data
+    input  logic [3:0] bin,
+    output logic  [7:0] bcd_data
 );
     always @(bin) begin
         case (bin)
@@ -352,11 +346,11 @@ module bcd (
 endmodule
 
 module blink (
-    input  wire       comp_in,
+    input  logic       comp_in,
     hour,
     min,
     sec,
-    output reg  [2:0] blink_sel
+    output logic  [2:0] blink_sel
 );
     always @(*) begin
         if (comp_in & sec) blink_sel = 3'b001;
@@ -365,3 +359,4 @@ module blink (
         else blink_sel = 3'b000;
     end
 endmodule
+

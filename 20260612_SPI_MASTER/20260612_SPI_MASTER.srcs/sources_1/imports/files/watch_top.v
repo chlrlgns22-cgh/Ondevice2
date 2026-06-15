@@ -4,7 +4,7 @@
 //  최상위 모듈: watch + SPI slave IP 통합
 // ============================================================
 
-module top_slave (
+module watch_top (
     input  wire       clk,
     input  wire       rst,
     input  wire       btnR,
@@ -22,11 +22,7 @@ module top_slave (
     input  wire       sclk,
     input  wire       mosi,
     input  wire       ss_n,
-    output wire       miso,
-
-    // SPI 상태 (선택적)
-    output wire       spi_busy,
-    output wire       spi_done
+    output wire       miso
 );
 
     parameter MSEC_WIDTH = 7, SEC_WIDTH = 6, MIN_WIDTH = 6, HOUR_WIDTH = 5;
@@ -112,6 +108,8 @@ module top_slave (
 
     // ── SPI IP ───────────────────────────────────────────────
     // watch 현재 시각을 SPI Master 요청에 따라 전송
+    wire w_spi_busy, w_spi_done;
+
     watch_spi_ip U_WATCH_SPI_IP (
         .clk    (clk),
         .rst    (rst),
@@ -123,8 +121,8 @@ module top_slave (
         .mosi   (mosi),
         .ss_n   (ss_n),
         .miso   (miso),
-        .busy   (spi_busy),
-        .done   (spi_done)
+        .busy   (w_spi_busy),
+        .done   (w_spi_done)
     );
 
 endmodule

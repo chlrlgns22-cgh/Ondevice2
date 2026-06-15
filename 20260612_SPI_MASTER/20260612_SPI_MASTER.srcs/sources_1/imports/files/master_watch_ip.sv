@@ -17,7 +17,7 @@
 // ============================================================
 
 module master_watch_ip #(
-    parameter CLK_DIV = 8'd4    // SCLK = 100MHz / (2*(4+1)) = 10MHz
+    parameter CLK_DIV = 8'd24   // SCLK = 100MHz / (2*(24+1)) = 2MHz
 ) (
     input  logic        clk,
     input  logic        rst,
@@ -142,7 +142,7 @@ module master_watch_ip #(
 
                 SEND_DUMMY: begin
                     if (!spi_busy) begin
-                        spi_tx_data <= 8'h00;
+                        spi_tx_data <= 8'h55;
                         spi_start   <= 1'b1;
                         state       <= WAIT_DUMMY;
                     end

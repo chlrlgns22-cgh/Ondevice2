@@ -37,6 +37,16 @@ module spi_master (
     logic cpha_r;
     logic sclk_r;
 
+    // ── miso 입력 동기화 (1단) ───────────────────────────────
+    logic miso_d1;
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset) begin
+            miso_d1 <= 1'b0;
+        end else begin
+            miso_d1 <= miso;
+        end
+    end
+
     assign sclk = sclk_r;
 
     always_ff @(posedge clk or posedge reset) begin
@@ -106,7 +116,7 @@ module spi_master (
                         if (step == 0) begin
                             step <= 1'b1;
                             if (cpha_r == 1'b0) begin
-                                rx_shift_reg <= {rx_shift_reg[6:0], miso};
+                                rx_shift_reg <= {rx_shift_reg[6:0], miso_d1};
                             end else begin
                                 mosi         <= tx_shift_reg[7];
                                 tx_shift_reg <= {tx_shift_reg[6:0], 1'b0};
@@ -119,14 +129,14 @@ module spi_master (
                                     tx_shift_reg <= {tx_shift_reg[6:0], 1'b0};
                                 end
                             end else begin
-                                rx_shift_reg <= {rx_shift_reg[6:0], miso};
+                                rx_shift_reg <= {rx_shift_reg[6:0], miso_d1};
                             end
                             if (bit_cnt == 7) begin
                                 state <= STOP;
                                 if (cpha_r == 1'b0)
                                     rx_data <= rx_shift_reg;
                                 else
-                                    rx_data <= {rx_shift_reg[6:0], miso};
+                                    rx_data <= {rx_shift_reg[6:0], miso_d1};
                             end else begin
                                 bit_cnt <= bit_cnt + 1;
                             end
