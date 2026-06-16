@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/button_debounce.v" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/control_unit.v" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/fnd_control.v" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/watch_datapath.v" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/watch_top.v" \
+
+sv xil_defaultlib  \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/master_top.sv" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/master_watch_ip.sv" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/spi_master.sv" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/spi_slave_top.sv" \
+"../../../../20260612_SPI_MASTER.srcs/sources_1/imports/files/watch_spi_ip.sv" \
+"../../../../20260612_SPI_MASTER.srcs/sim_1/new/tb_spi_all.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
