@@ -47,9 +47,9 @@ module spi_slave_top (
         end
     end
 
-    logic sclk_rising  = sclk_d1 & ~sclk_d2;
-    logic sclk_falling = ~sclk_d1 & sclk_d2;
-    logic ss_active    = ~ss_n_d2;
+    wire sclk_rising  = sclk_d1 & ~sclk_d2;
+    wire sclk_falling = ~sclk_d1 & sclk_d2;
+    wire ss_active    = ~ss_n_d2;
 
     assign busy    = (state != IDLE);
     assign rx_data = rx_shift_reg;

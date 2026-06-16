@@ -69,7 +69,7 @@ module tick_counter_watch #(
     assign tick_counter = counter_reg;
 
     always @(posedge clk or posedge rst) begin
-        if (rst) counter_reg <= 0;
+        if (rst) counter_reg <= 56;
         else     counter_reg <= counter_next;
     end
 

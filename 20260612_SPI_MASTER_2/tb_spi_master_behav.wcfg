@@ -3,93 +3,89 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_spi_master_behav.wdb" id="1">
+      <db_ref path="tb_spi_all_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="tb_spi_master" />
+            <top_module name="tb_spi_all" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1000001fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomStartTime time="72596238fs"></ZoomStartTime>
+      <ZoomEndTime time="104296239fs"></ZoomEndTime>
+      <Cursor1Time time="300245000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="238"></NameColumnWidth>
-      <ValueColumnWidth column_width="103"></ValueColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
-   <wvobject fp_name="/tb_spi_master/clk" type="logic">
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/tb_spi_all/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject fp_name="/tb_spi_all/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/start" type="logic">
-      <obj_property name="ElementShortName">start</obj_property>
-      <obj_property name="ObjectShortName">start</obj_property>
+   <wvobject fp_name="/tb_spi_all/btnR" type="logic">
+      <obj_property name="ElementShortName">btnR</obj_property>
+      <obj_property name="ObjectShortName">btnR</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/cpol" type="logic">
-      <obj_property name="ElementShortName">cpol</obj_property>
-      <obj_property name="ObjectShortName">cpol</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/tb_spi_all/sw" type="logic">
+      <obj_property name="ElementShortName">sw</obj_property>
+      <obj_property name="ObjectShortName">sw</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/cpha" type="logic">
-      <obj_property name="ElementShortName">cpha</obj_property>
-      <obj_property name="ObjectShortName">cpha</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_spi_master/sclk" type="logic">
+   <wvobject fp_name="/tb_spi_all/sclk" type="logic">
       <obj_property name="ElementShortName">sclk</obj_property>
       <obj_property name="ObjectShortName">sclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/miso" type="logic">
-      <obj_property name="ElementShortName">miso</obj_property>
-      <obj_property name="ObjectShortName">miso</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/mosi" type="logic">
+   <wvobject fp_name="/tb_spi_all/mosi" type="logic">
       <obj_property name="ElementShortName">mosi</obj_property>
       <obj_property name="ObjectShortName">mosi</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/ss_n" type="logic">
+   <wvobject fp_name="/tb_spi_all/miso" type="logic">
+      <obj_property name="ElementShortName">miso</obj_property>
+      <obj_property name="ObjectShortName">miso</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_all/ss_n" type="logic">
       <obj_property name="ElementShortName">ss_n</obj_property>
       <obj_property name="ObjectShortName">ss_n</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/busy" type="logic">
-      <obj_property name="ElementShortName">busy</obj_property>
-      <obj_property name="ObjectShortName">busy</obj_property>
-      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/tb_spi_all/U_SLAVE/U_WATCH_SPI_IP/tx_data" type="array">
+      <obj_property name="ElementShortName">tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_data[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/done" type="logic">
-      <obj_property name="ElementShortName">done</obj_property>
-      <obj_property name="ObjectShortName">done</obj_property>
-      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/r_hour" type="array">
+      <obj_property name="ElementShortName">r_hour[4:0]</obj_property>
+      <obj_property name="ObjectShortName">r_hour[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/rx_data" type="array">
-      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/r_min" type="array">
+      <obj_property name="ElementShortName">r_min[5:0]</obj_property>
+      <obj_property name="ObjectShortName">r_min[5:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/state" type="array">
-      <obj_property name="ElementShortName">state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/r_sec" type="array">
+      <obj_property name="ElementShortName">r_sec[5:0]</obj_property>
+      <obj_property name="ObjectShortName">r_sec[5:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/tx_shift_reg" type="array">
-      <obj_property name="ElementShortName">tx_shift_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tx_shift_reg[7:0]</obj_property>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/r_msec" type="array">
+      <obj_property name="ElementShortName">r_msec[6:0]</obj_property>
+      <obj_property name="ObjectShortName">r_msec[6:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/rx_shift_reg" type="array">
-      <obj_property name="ElementShortName">rx_shift_reg[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_shift_reg[7:0]</obj_property>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/spi_tx_data" type="array">
+      <obj_property name="ElementShortName">spi_tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_tx_data[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_spi_master/dut/half_tick" type="logic">
-      <obj_property name="ElementShortName">half_tick</obj_property>
-      <obj_property name="ObjectShortName">half_tick</obj_property>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/spi_busy" type="logic">
+      <obj_property name="ElementShortName">spi_busy</obj_property>
+      <obj_property name="ObjectShortName">spi_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/spi_done" type="logic">
+      <obj_property name="ElementShortName">spi_done</obj_property>
+      <obj_property name="ObjectShortName">spi_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_spi_all/U_MASTER/U_MASTER_WATCH_IP_ALL/spi_rx_data" type="array">
+      <obj_property name="ElementShortName">spi_rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_rx_data[7:0]</obj_property>
    </wvobject>
 </wave_config>
