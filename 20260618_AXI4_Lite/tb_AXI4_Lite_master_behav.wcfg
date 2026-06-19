@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_AXI4_Lite_master_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_AXI4_Lite_master" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="305001fs"></ZoomEndTime>
+      <Cursor1Time time="305000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="238"></NameColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="31" />
+   <wvobject fp_name="/tb_AXI4_Lite_master/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/transfer" type="logic">
+      <obj_property name="ElementShortName">transfer</obj_property>
+      <obj_property name="ObjectShortName">transfer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/write" type="logic">
+      <obj_property name="ElementShortName">write</obj_property>
+      <obj_property name="ObjectShortName">write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/addr" type="array">
+      <obj_property name="ElementShortName">addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/wdata" type="array">
+      <obj_property name="ElementShortName">wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/DUT/rd_done" type="logic">
+      <obj_property name="ElementShortName">rd_done</obj_property>
+      <obj_property name="ObjectShortName">rd_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/DUT/wr_done" type="logic">
+      <obj_property name="ElementShortName">wr_done</obj_property>
+      <obj_property name="ObjectShortName">wr_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/rdata" type="array">
+      <obj_property name="ElementShortName">rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/DUT/AW_STATE" type="other">
+      <obj_property name="ElementShortName">AW_STATE</obj_property>
+      <obj_property name="ObjectShortName">AW_STATE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/aw_ready" type="logic">
+      <obj_property name="ElementShortName">aw_ready</obj_property>
+      <obj_property name="ObjectShortName">aw_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/aw_valid" type="logic">
+      <obj_property name="ElementShortName">aw_valid</obj_property>
+      <obj_property name="ObjectShortName">aw_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/aw_addr" type="array">
+      <obj_property name="ElementShortName">aw_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aw_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/w_ready" type="logic">
+      <obj_property name="ElementShortName">w_ready</obj_property>
+      <obj_property name="ObjectShortName">w_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/DUT/W_STATE" type="other">
+      <obj_property name="ElementShortName">W_STATE</obj_property>
+      <obj_property name="ObjectShortName">W_STATE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/w_valid" type="logic">
+      <obj_property name="ElementShortName">w_valid</obj_property>
+      <obj_property name="ObjectShortName">w_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/w_data" type="array">
+      <obj_property name="ElementShortName">w_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/DUT/B_STATE" type="other">
+      <obj_property name="ElementShortName">B_STATE</obj_property>
+      <obj_property name="ObjectShortName">B_STATE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/b_valid" type="logic">
+      <obj_property name="ElementShortName">b_valid</obj_property>
+      <obj_property name="ObjectShortName">b_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/b_resp" type="array">
+      <obj_property name="ElementShortName">b_resp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">b_resp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/b_ready" type="logic">
+      <obj_property name="ElementShortName">b_ready</obj_property>
+      <obj_property name="ObjectShortName">b_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/DUT/AR_STATE" type="other">
+      <obj_property name="ElementShortName">AR_STATE</obj_property>
+      <obj_property name="ObjectShortName">AR_STATE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/ar_ready" type="logic">
+      <obj_property name="ElementShortName">ar_ready</obj_property>
+      <obj_property name="ObjectShortName">ar_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/ar_valid" type="logic">
+      <obj_property name="ElementShortName">ar_valid</obj_property>
+      <obj_property name="ObjectShortName">ar_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/ar_addr" type="array">
+      <obj_property name="ElementShortName">ar_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ar_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/DUT/R_STATE" type="other">
+      <obj_property name="ElementShortName">R_STATE</obj_property>
+      <obj_property name="ObjectShortName">R_STATE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/r_valid" type="logic">
+      <obj_property name="ElementShortName">r_valid</obj_property>
+      <obj_property name="ObjectShortName">r_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/r_resp" type="array">
+      <obj_property name="ElementShortName">r_resp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">r_resp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/r_data" type="array">
+      <obj_property name="ElementShortName">r_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_AXI4_Lite_master/r_ready" type="logic">
+      <obj_property name="ElementShortName">r_ready</obj_property>
+      <obj_property name="ObjectShortName">r_ready</obj_property>
+   </wvobject>
+</wave_config>
