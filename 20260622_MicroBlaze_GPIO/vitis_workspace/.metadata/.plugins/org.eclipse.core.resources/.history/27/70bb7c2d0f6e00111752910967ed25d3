@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xparameters.h"
+#include "sleep.h"
+
+#define GPIOA_BASEADDR XPAR_GPIO_0_S00_AXI_BASEADDR
+#define GPIOA_CR	   (*(uint32_t*)(GPIOA_BASEADDR + 0x00))
+#define GPIOA_IDR	   (*(uint32_t*)(GPIOA_BASEADDR + 0x04))
+#define GPIOA_ODR	   (*(uint32_t*)(GPIOA_BASEADDR + 0x08))
+
+int main()
+{
+	*GPIOA_CR = 0xff;
+    init_platform();
+
+    print("Hello World\n\r");
+    print("Successfully ran Hello World application");
+    while(1)
+    {
+    	*GPIOA_ODR = 0xff;
+    	usleep(200000);
+    	*GPIOA_ODR = 0x00;
+    	usleep(200000);
+    }
+
+    cleanup_platform();
+    return 0;
+}

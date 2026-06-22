@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../20260619_AXI4_Lite.srcs/sources_1/imports/hdl/myip_v1_0.v" \
+"../../../../20260619_AXI4_Lite.srcs/sources_1/imports/hdl/myip_v1_0_S00_AXI.v" \
+
+sv xil_defaultlib  \
+"../../../../20260619_AXI4_Lite.srcs/sim_1/imports/Downloads/tb_myip_v1_0.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

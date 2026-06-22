@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="ledBlink" location="D:/Working/OndeviceAI2/20260622_MicroBlaze_GPIO/vitis_workspace/ledBlink" platform="D:/Working/OndeviceAI2/20260622_MicroBlaze_GPIO/vitis_workspace/GPIO_Test_wrapper/export/GPIO_Test_wrapper/GPIO_Test_wrapper.xpfm" platformUID="xilinx:basys3::0.0(custom)" systemProject="ledBlink_system" sysConfig="GPIO_Test_wrapper" runtime="cpp" cpu="standalone_microblaze_0" cpuInstance="microblaze_0" os="standalone" mssSignature="003284a56e24f5f0457553b251db6527">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.2147044775">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1763321693" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>
