@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdx:platform sdx:vendor="xilinx.com"
+              sdx:library="sdx"
+              sdx:name="StopWatch_design_wrapper"
+              sdx:version="1.0"
+              sdx:schemaVersion="1.0"
+              xmlns:sdx="http://www.xilinx.com/sdx">
+    <sdx:description>
+StopWatch_design_wrapper
+    </sdx:description>
+    <sdx:systemConfigurations sdx:defaultConfiguration="StopWatch_design_wrapper">
+        <sdx:configuration sdx:name="StopWatch_design_wrapper"
+                           sdx:displayName="StopWatch_design_wrapper"
+                           sdx:defaultProcessorGroup="standalone_microblaze_0"
+                           sdx:runtimes="cpp">
+            <sdx:description>StopWatch_design_wrapper</sdx:description>
+            <sdx:bootImages sdx:default="standard">
+                <sdx:image sdx:name="standard"
+                            sdx:bif="StopWatch_design_wrapper/boot/StopWatch_design_wrapper.bif"
+                            sdx:readme="StopWatch_design_wrapper/boot/generic.readme"
+                            />
+            </sdx:bootImages>
+            <sdx:processorGroup sdx:name="standalone_microblaze_0"
+                                sdx:displayName="standalone_microblaze_0"
+                                sdx:cpuType="microblaze_0"
+                                sdx:cpuInstance="microblaze_0">
+                <sdx:os sdx:name="standalone"
+                        sdx:displayName="standalone"
+                        sdx:bspLibraryPaths="StopWatch_design_wrapper/standalone_microblaze_0/bsplib/lib"
+                        sdx:bspIncludePaths="StopWatch_design_wrapper/standalone_microblaze_0/bspinclude/include"
+                        sdx:bspConfig="StopWatch_design_wrapper/standalone_microblaze_0/system.mss"
+                />
+            </sdx:processorGroup>
+        </sdx:configuration>
+    </sdx:systemConfigurations>
+</sdx:platform>

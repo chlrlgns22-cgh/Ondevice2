@@ -1,0 +1,32 @@
+
+#include <stdint.h>
+#include "xparameters.h"
+#include "sleep.h"
+#include "xil_printf.h"
+
+
+// GPIOC_BASEADDR 0x44A20000
+// GPIOD_BASEADDR 0x44A30000
+
+int main()
+{
+    int counter = 0;
+    char b = 'a';
+    int *pa;
+    pa = &b;
+
+    *(uint32_t*)(0x44A20000 + 0x00) = 0xff;
+    *(uint32_t*)(0x44A30000 + 0x00) = 0xff;
+
+    while (1)
+    {
+    	xil_printf("counter = %d\n",counter++);
+    	*(uint32_t*)(0x44A20000 + 0x08) = 0xff;
+    	*(uint32_t*)(0x44A30000 + 0x08) = 0xff;
+    	usleep(100000);
+    	*(uint32_t*)(0x44A20000 + 0x08) = 0x00;
+    	*(uint32_t*)(0x44A30000 + 0x08) = 0x00;
+    	usleep(100000);
+    }
+    return 0;
+}

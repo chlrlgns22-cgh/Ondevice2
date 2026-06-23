@@ -5,3 +5,6 @@ timestamp=[2026-06-22 16:44:16], mode=APP_CREATION, duration=0:00:05.880, durati
 timestamp=[2026-06-22 16:51:46], mode=PLATFORM_GENERATION, duration=0:00:05.126, duration_ms=5126, data={name=GPIO_Test_wrapper}
 timestamp=[2026-06-22 16:51:47], mode=BUILD, duration=0:00:00.318, duration_ms=318, data={name=ledBlink, configuration=Debug, clean_build=false}
 timestamp=[2026-06-22 16:53:27], mode=BUILD, duration=0:00:01.419, duration_ms=1419, data={name=ledBlink, configuration=Debug, clean_build=false}
+timestamp=[2026-06-23 09:06:31], mode=WORKBENCH_START, duration=0:00:11.697, duration_ms=11697, data={}
+timestamp=[2026-06-23 09:06:32], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.088, duration_ms=88, data={}
+timestamp=[2026-06-23 09:06:32], mode=WORKBENCH_UI_INIT, duration=0:00:00.915, duration_ms=915, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=GPIO_Test_wrapper,RemoteSystemsTempFiles,ledBlink,ledBlink_system}

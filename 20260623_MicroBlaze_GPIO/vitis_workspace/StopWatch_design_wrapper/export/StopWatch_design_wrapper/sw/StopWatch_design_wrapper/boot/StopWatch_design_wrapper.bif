@@ -1,0 +1,6 @@
+/*StopWatch_design_wrapper*/
+the_ROM_image:
+{
+   <bitstream> 
+   <elf> 
+}

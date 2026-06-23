@@ -1,0 +1,50 @@
+#include <stdint.h>
+#include "xparameters.h"
+#include "sleep.h"
+#include "xil_printf.h"
+
+typedef struct {
+	uint32_t CR;
+}GPIO_TypeDef;
+// GPIOC_BASEADDR 0x44A20000
+// GPIOD_BASEADDR 0x44A30000
+#define GPIOA_BASEADDR XPAR_GPIO_0_S00_AXI_BASEADDR
+#define GPIOB_BASEADDR XPAR_GPIO_1_S00_AXI_BASEADDR
+#define GPIOC_BASEADDR XPAR_GPIO_2_S00_AXI_BASEADDR
+#define GPIOD_BASEADDR XPAR_GPIO_3_S00_AXI_BASEADDR
+
+#define GPIOA_CR (*(uint32_t *)(GPIOA_BASEADDR +0x00))
+#define GPIOA_IDR (*(uint32_t *)(GPIOA_BASEADDR +0x04))
+#define GPIOA_ODR (*(uint32_t *)(GPIOA_BASEADDR +0x08))
+
+#define GPIOB_CR (*(uint32_t *)(GPIOB_BASEADDR +0x00))
+#define GPIOB_IDR (*(uint32_t *)(GPIOB_BASEADDR +0x04))
+#define GPIOB_ODR (*(uint32_t *)(GPIOB_BASEADDR +0x08))
+
+#define GPIOC_CR (*(uint32_t *)(GPIOC_BASEADDR +0x00))
+#define GPIOC_IDR (*(uint32_t *)(GPIOC_BASEADDR +0x04))
+#define GPIOC_ODR (*(uint32_t *)(GPIOC_BASEADDR +0x08))
+
+#define GPIOD_CR (*(uint32_t *)(GPIOD_BASEADDR +0x00))
+#define GPIOD_IDR (*(uint32_t *)(GPIOD_BASEADDR +0x04))
+#define GPIOD_ODR (*(uint32_t *)(GPIOD_BASEADDR +0x08))
+
+int main()
+{
+    int counter = 0;
+
+    GPIOC_CR = 0xff;
+    GPIOD_CR = 0xff;
+
+    while (1)
+    {
+    	xil_printf("counter = %d\n",counter++);
+    	GPIOC_ODR = 0xff;
+    	GPIOD_ODR = 0xff;
+    	usleep(100000);
+    	GPIOC_ODR = 0x00;
+    	GPIOD_ODR = 0x00;
+    	usleep(100000);
+    }
+    return 0;
+}

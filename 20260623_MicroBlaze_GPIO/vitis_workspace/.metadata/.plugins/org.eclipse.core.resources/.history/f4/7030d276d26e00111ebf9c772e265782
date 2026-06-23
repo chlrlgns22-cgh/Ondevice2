@@ -1,0 +1,77 @@
+#include <stdint.h>
+#include "sleep.h"
+#include "xil_printf.h"
+#include "HAL/GPIO/GPIO.h"
+
+#define LED_LOW_GPIO	GPIOC
+#define LED_HI_GPIO	GPIOD
+
+void LED_Init() {
+	ledState = 0;
+}
+
+void LED_Port(uint16_t led) {
+	uint32_t ledTemp;
+
+	ledTemp = led & 0x00ff;
+	GPIO_WritePort(LED_LOW_GPIO, ledTemp);
+	ledTemp = (led >> 8) & 0x00ff;
+	GPIO_WritePort(LED_HI_GPIO, ledTemp);
+}
+
+void LED_PinOn(uint16_t ledPin) {
+	uint16_t ledPinTemp;
+	uint32_t ledPortState;
+
+	ledPinTemp = 1 << ledPin;
+
+	ledPortState = GPIO_ReadPort(LED_LOW_GPIO);
+	ledPortState |= (ledPinTemp & 0x00ff);
+	GPIO_WritePort(LED_LOW_GPIO, ledPortState);
+
+	ledPortState = GPIO_ReadPort(LED_HI_GPIO);
+	ledPortState |= (ledPinTemp & 0x00ff);
+	GPIO_WritePort(LED_HI_GPIO, ledPortState);
+
+}
+
+void LED_PinOff() {
+	uint16_t ledPinTemp;
+	uint32_t ledPortState;
+
+	ledPinTemp = 1 << ledPin;
+
+	ledPortState = GPIO_ReadPort(LED_LOW_GPIO);
+	ledPortState &= ~(ledPinTemp & 0x00ff);
+	GPIO_WritePort(LED_LOW_GPIO, ledPortState);
+
+	ledPortState = GPIO_ReadPort(LED_HI_GPIO);
+	ledPortState &= ~(ledPinTemp & 0x00ff);
+	GPIO_WritePort(LED_HI_GPIO, ledPortState);
+}
+
+void LED_Toggle() {
+
+}
+
+int main() {
+	int counter = 0;
+
+	GPIO_SetMode(GPIOC, 0xff);
+	GPIO_SetMode(GPIOD, 0xff);
+
+	while (1) {
+		xil_printf("counter = %d\n", counter++);
+
+		//LED_On();
+		GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_SET);
+		GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_SET);
+		usleep(100000);
+
+		//LED_Off();
+		GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_RESET);
+		GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_RESET);
+		usleep(100000);
+	}
+	return 0;
+}
