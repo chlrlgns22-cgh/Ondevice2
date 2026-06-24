@@ -1,0 +1,19 @@
+/*
+ * FND.h
+ *
+ *  Created on: 2026. 6. 24.
+ *      Author: kccistc
+ */
+
+#ifndef SRC_DRIVER_FND_FND_H_
+#define SRC_DRIVER_FND_FND_H_
+
+#define FND_DATA_GPIO 	GPIOA
+#define FND_COM_GPIO 	GPIOB
+
+#define FND_DIGIT_0		0
+#define FND_DIGIT_1		1
+#define FND_DIGIT_2		2
+#define FND_DIGIT_3		3
+
+#endif /* SRC_DRIVER_FND_FND_H_ */

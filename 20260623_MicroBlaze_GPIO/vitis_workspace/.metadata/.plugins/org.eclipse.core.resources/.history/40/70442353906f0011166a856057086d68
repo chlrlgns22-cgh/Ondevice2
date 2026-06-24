@@ -1,0 +1,92 @@
+#include "xil_printf.h"
+#include "common/delay/delay.h"
+#include "driver/LED/LED.h"
+#include "driver/FND/FND.h"
+
+typedef enum {
+	NO_ACT = 0, ACT_PUSHED, ACT_RELEASED
+} button_status_e;
+
+typedef enum {
+	RELEASED = 0, PUSHED
+} button_state_e;
+
+typedef struct {
+	GPIO_TypeDef *GPIOx;
+	uint32_t gpio_pin;
+	button_state_e prevState;
+}hbutton;
+
+hbutton hbtnRunStop, hbtnClear;
+
+void Button_Init()
+{
+	uint32_t btnPort = GPIO_GETCR(GPIOB);
+	btnPort &= ~( 1<<4 | 1<<5);
+	GPIO_SetMode(GPIOB, btnPort);
+	Button_SetInit(&hbtnRunStop, GPIOB, GPIO_PIN_4);
+	Button_SetInit(&hbtnClear, GPIOB, GPIO_PIN_5);
+}
+
+void Button_SetInit(hbutton *hbtn, GPIO_TypeDef *GPIOx, uint32_t gpio_pin0)
+{
+	hbtn->GPIOx = GPIOx;
+	hbtn->gpio_pin = gpio_pin;
+	hbtn->prevState = RELEASED;
+}
+
+button_status_e Button_GetState(hbutton *hbtn)
+{
+button_state_e curState = GPIO_ReadPin(hbtn->GPIOx, hbtn->gpio_pin) ? PUSHED : RELEASED;
+
+if(hbtn->prevState == RELEASED && curState == PUSHED){
+	hbtn->prevState = curState;
+	delay_ms(5);
+	return ACT_PUSHED;
+}
+else if(hbtn->prevState == PUSHED && curState == RELEASED){
+	hbtn->prevState = curState;
+	delay_ms(5);
+	return ACT_RELEASED;
+}
+
+
+return NO_ACT;
+}
+
+int main()
+{
+int counter = 0;
+uint16_t ledState = 1;
+
+LED_Init();
+FND_Init();
+Button_Init();
+
+uint32_t curTime, prevTime;
+
+while (1) {
+	if (Button_GetState() == ACT_RELEASED) {
+		LED_PinToggle(0);
+	}
+//	curTime = millis();
+//	if (curTime - prevTime > 100 - 1) {
+//		prevTime = curTime;
+//		xil_printf("counter = %d\n", counter);
+//
+//		//		ledState = (ledState<<1) | (ledState >>15);
+//		ledState = (ledState >> 1) | (ledState << 15);
+//		LED_WritePort16(ledState);/
+//
+//		//	FND_SelDigit(FND_DIGIT_0);
+//		//		FND_DispDigit(counter % 10);
+//
+//		FND_SetNum(counter++);
+//	}
+	/************ polling service routine ****************/
+	FND_Excute();
+	incTick();
+	delay_ms(1);
+}
+return 0;
+}

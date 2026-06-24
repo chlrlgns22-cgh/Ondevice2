@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="scw_hwspec" value="D:\Working\OndeviceAI2\20260623_MicroBlaze_GPIO"/>
+	<item key="scw_hwspec_file_selection" value="D:\Working\OndeviceAI2\20260623_MicroBlaze_GPIO\XSA"/>
 </section>

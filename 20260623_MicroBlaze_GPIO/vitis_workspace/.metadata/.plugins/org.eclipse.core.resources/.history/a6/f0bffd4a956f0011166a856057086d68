@@ -1,0 +1,44 @@
+/*
+ * StopWatch.c
+ *
+ *  Created on: 2026. 6. 24.
+ *      Author: kccistc
+ */
+
+#include "StopWatch.h"
+
+typedef enum {
+	STOP =0,
+	RUN,
+	CLEAR
+}; stopWatch_e
+
+stopWatch_e stopWatchState;
+
+void StopWatch_Init()
+{
+	LED_Init();
+	FND_Init();
+	Button_Init();
+
+	stopWatchState = STOP;
+}
+
+void StopWatch_Excute()
+{
+	switch (stopWatchState){
+	case STOP: if(Button_GetState(hbtnRunStop)==ACT_PUSHED) {
+		stopWatchState =RUN;
+	} else if(Button_GetState(hbtnClear)==ACT_PUSHED) {
+		stopWatchState =CLEAR;
+		break;
+	case RUN:
+		if(Button_GetState(hbtnRunStop)==ACT_PUSHED) {
+				stopWatchState =STOP;
+		break;
+	case CLEAR:
+		stopWatchState =STOP;
+		break;
+	default: stopWatchState = STOP;
+	}
+}

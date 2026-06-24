@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-//Date        : Tue Jun 23 10:00:16 2026
+//Date        : Wed Jun 24 09:26:38 2026
 //Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 //Command     : generate_target StopWatch_design_wrapper.bd
 //Design      : StopWatch_design_wrapper

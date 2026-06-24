@@ -19,3 +19,9 @@ platform active {StopWatch_design_wrapper}
 platform generate -quick
 platform generate
 platform write
+platform active {StopWatch_design_wrapper}
+platform config -updatehw {D:/Working/OndeviceAI2/20260623_MicroBlaze_GPIO/StopWatch_design_wrapper.xsa}
+platform generate -domains 
+platform active {StopWatch_design_wrapper}
+platform config -updatehw {D:/Working/OndeviceAI2/20260623_MicroBlaze_GPIO/XSA/StopWatch_design_wrapper.xsa}
+platform generate -domains 

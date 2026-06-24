@@ -17,7 +17,6 @@ typedef struct {
 	uint32_t ODR;
 } GPIO_TypeDef;
 
-
 #define GPIOA_BASEADDR XPAR_GPIO_0_S00_AXI_BASEADDR
 #define GPIOB_BASEADDR XPAR_GPIO_1_S00_AXI_BASEADDR
 #define GPIOC_BASEADDR XPAR_GPIO_2_S00_AXI_BASEADDR
@@ -44,8 +43,12 @@ typedef struct {
 
 void GPIO_SetMode(GPIO_TypeDef *GPIOx, int mode);
 void GPIO_WritePort(GPIO_TypeDef *GPIOx, uint32_t data);
-void GPIO_WritePin(GPIO_TypeDef *GPIOx, uint32_t gpio_pin,uint32_t gpio_pin_state);
+void GPIO_WritePin(GPIO_TypeDef *GPIOx, uint32_t gpio_pin,
+		uint32_t gpio_pin_state);
 uint32_t GPIO_ReadPort(GPIO_TypeDef *GPIOx);
 uint32_t GPIO_ReadPin(GPIO_TypeDef *GPIOx, uint32_t gpio_pin);
+uint32_t GPIO_GetODR(GPIO_TypeDef *GPIOx);
+uint32_t GPIO_GetCR(GPIO_TypeDef *GPIOx);
+
 
 #endif /* SRC_HAL_GPIO_GPIO_H_ */

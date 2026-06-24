@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:gpio:1.0
-// IP Revision: 1
+// IP Revision: 2
 
 (* X_CORE_INFO = "gpio_v1_0,Vivado 2020.2" *)
 (* CHECK_LICENSE_TYPE = "StopWatch_design_gpio_0_0,gpio_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "StopWatch_design_gpio_0_0,gpio_v1_0,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=gpio,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "StopWatch_design_gpio_0_0,gpio_v1_0,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=gpio,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module StopWatch_design_gpio_0_0 (
   io_port,

@@ -1,0 +1,45 @@
+#include "sleep.h"
+#include "xil_printf.h"
+#include "driver/LED/LED.h"
+#include "driver/FND/FND.h"
+
+void delay_sec(u32 useconds)
+{
+sleep(useconds)
+}
+
+void delay_sec(ULONG useconds)
+{
+
+}
+
+void delay_sec(ULONG useconds)
+{
+
+}
+
+int main()
+{
+	int counter = 0;
+	uint16_t ledState = 1;
+
+	LED_Init();
+	FND_Init();
+
+	while (1) {
+		xil_printf("counter = %d\n", counter++);
+
+		//		ledState = (ledState<<1) | (ledState >>15);
+		ledState = (ledState >> 1) | (ledState << 15);
+		LED_WritePort16(ledState);
+
+	//	FND_SelDigit(FND_DIGIT_0);
+//		FND_DispDigit(counter % 10);
+
+		FND_SetNum(1234);
+
+		FND_Excute();
+		usleep(1000);
+	}
+	return 0;
+}

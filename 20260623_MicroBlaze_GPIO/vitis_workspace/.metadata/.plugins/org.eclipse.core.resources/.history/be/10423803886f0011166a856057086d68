@@ -1,0 +1,38 @@
+#include "xil_printf.h"
+#include "common/delay/delay.h"
+#include "driver/LED/LED.h"
+#include "driver/FND/FND.h"
+
+
+int main()
+{
+	int counter = 0;
+	uint16_t ledState = 1;
+
+	LED_Init();
+	FND_Init();
+
+	uint32_t curTime, prevTime;
+
+	while (1) {
+		curTime = millis();
+		if(curTime -prevTime >100){
+			prevTime = curTime;
+		xil_printf("counter = %d\n", counter++);
+
+		//		ledState = (ledState<<1) | (ledState >>15);
+		ledState = (ledState >> 1) | (ledState << 15);
+		LED_WritePort16(ledState);
+
+		//	FND_SelDigit(FND_DIGIT_0);
+		//		FND_DispDigit(counter % 10);
+
+		FND_SetNum(1234);
+		}
+		/************ polling service routine ****************/
+		FND_Excute();
+		incTick();
+		delay_ms(1);
+	}
+	return 0;
+}

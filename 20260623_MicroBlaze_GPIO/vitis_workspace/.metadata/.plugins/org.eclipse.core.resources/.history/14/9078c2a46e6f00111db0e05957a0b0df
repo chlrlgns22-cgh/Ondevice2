@@ -1,0 +1,16 @@
+/*
+ * LED.h
+ *
+ *  Created on: 2026. 6. 24.
+ *      Author: kccistc
+ */
+
+#ifndef SRC_DRIVER_LED_LED_H_
+#define SRC_DRIVER_LED_LED_H_
+
+#include "../../HAL/GPIO/GPIO.h"
+
+#define LED_LOW_GPIO	GPIOC
+#define LED_HI_GPIO	GPIOD
+
+#endif /* SRC_DRIVER_LED_LED_H_ */
