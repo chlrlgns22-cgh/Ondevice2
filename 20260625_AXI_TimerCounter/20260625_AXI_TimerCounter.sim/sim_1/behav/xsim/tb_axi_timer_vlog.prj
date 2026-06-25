@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../20260625_AXI_TimerCounter.srcs/sources_1/new/TimerCounter.v" \
+"../../../../20260625_AXI_TimerCounter.srcs/sources_1/imports/hdl/axi_template_v1_0.v" \
+"../../../../20260625_AXI_TimerCounter.srcs/sources_1/imports/hdl/axi_template_v1_0_S00_AXI.v" \
+
+sv xil_defaultlib  \
+"../../../../20260625_AXI_TimerCounter.srcs/sim_1/new/tb_axi_timer.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

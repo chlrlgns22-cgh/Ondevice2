@@ -1,0 +1,130 @@
+/*
+ * FND.c
+ *
+ *  Created on: 2026. 6. 24.
+ *      Author: kccistc
+ */
+#include "FND.h"
+
+
+
+uint32_t fndNumber = 0;
+
+void FND_Init()
+{
+	uint32_t fndComTemp = GPIO_GetCR(GPIOB);
+	fndComTemp |= 0x0f;
+	GPIO_SetMode(FND_COM_GPIO, fndComTemp);
+	GPIO_SetMode(FND_DATA_GPIO, 0xff);
+}
+
+void FND_SetNum(uint32_t num)
+{
+	fndNumber = num;
+}
+
+void FND_Excute()
+{
+	FND_DispNUM(fndNumber);
+}
+
+void FND_SelDigit(uint32_t digit)
+{
+	uint32_t digitPos;
+	digitPos = GPIO_GetODR(FND_COM_GPIO);
+	digitPos = (digitPos | 0x0f) & ~(1 << digit);
+
+	GPIO_WritePort(FND_COM_GPIO, digitPos);
+}
+
+void FND_DispDigit(, uint32_t fndDP)
+{
+
+	uint8_t fndFont[16] = { 0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8,
+			0x80, 0x90, 0x88, 0x83, 0xc6, 0xa1, 0x86, 0x8e };
+	uint32_t fndData;
+	if(fndDP){
+		fndData = fndFont[num] & ~(1<<7);
+	}
+	else {
+		fndData = fndFont[num] | (1<<7);
+	}
+	GPIO_WritePort(FND_DATA_GPIO, fndData);
+}
+
+void FND_DispAllOff()
+{
+		uint32_t digitPos;
+		digitPos = GPIO_GetODR(FND_COM_GPIO);
+		digitPos = digitPos | 0x0f;
+
+		GPIO_WritePort(FND_COM_GPIO, digitPos);
+}
+
+//void FND_DispNUM(uint32_t num)
+//{
+//	static uint32_t fndDigitState = 0;
+//	fndDigitState = (fndDigitState + 1) % 4;
+//
+//	FND_DispAllOff();
+//
+//
+//	switch (fndDigitState) {
+//	case 0:
+//		FND_DispDigit(num % 10);
+//		FND_SelDigit(FND_DIGIT_0);
+//		break;
+//
+//	case 1:
+//		FND_DispDigit(num/10 % 10);
+//		FND_SelDigit(FND_DIGIT_1);
+//		break;
+//
+//	case 2:
+//		FND_DispDigit(num/100 % 10);
+//		FND_SelDigit(FND_DIGIT_2);
+//		break;
+//
+//	case 3:
+//		FND_DispDigit(num/1000  % 10);
+//		FND_SelDigit(FND_DIGIT_3);
+//		break;
+//	}
+//}
+
+
+void FND_DispNUM(uint32_t num)
+{
+	static uint32_t fndDigitState = 0;
+	fndDigitState = (fndDigitState + 1) % 4;
+
+	FND_DispAllOff();
+
+	uint32_t msec_data = num ;
+	uint32_t sec_data = (num/10) %60;
+	uint32_t min_data = (num/10/60) %60;
+	uint32_t hour_data = (num/10/60/60) %24;
+
+	switch (fndDigitState) {
+	case 0:
+		FND_DispDigit(msec_data % 10);
+		FND_SelDigit(FND_DIGIT_0);
+		break;
+
+	case 1:
+		FND_DispDigit(sec_data % 10);
+		FND_SelDigit(FND_DIGIT_1);
+		break;
+
+	case 2:
+		FND_DispDigit(sec_data / 10 % 10);
+		FND_SelDigit(FND_DIGIT_2);
+		break;
+
+	case 3:
+		FND_DispDigit(min_data  % 10);
+		FND_SelDigit(FND_DIGIT_3);
+		break;
+	}
+}
+

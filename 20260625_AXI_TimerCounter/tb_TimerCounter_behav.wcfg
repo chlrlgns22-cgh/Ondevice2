@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_axi_timer_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_axi_timer" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="268601fs"></ZoomEndTime>
+      <Cursor1Time time="79800fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="238"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject fp_name="/tb_axi_timer/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/reset_n" type="logic">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/intr" type="logic">
+      <obj_property name="ElementShortName">intr</obj_property>
+      <obj_property name="ObjectShortName">intr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axi_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axi_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_awprot" type="array">
+      <obj_property name="ElementShortName">s00_axi_awprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_awvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_awready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_wvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_wready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_bresp" type="array">
+      <obj_property name="ElementShortName">s00_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_bvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_bready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_bready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_arprot" type="array">
+      <obj_property name="ElementShortName">s00_axi_arprot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_arprot[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_arvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_arready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_arready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_rresp" type="array">
+      <obj_property name="ElementShortName">s00_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_rvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_rready" type="logic">
+      <obj_property name="ElementShortName">s00_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_awaddr" type="array">
+      <obj_property name="ElementShortName">s00_axi_awaddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_awaddr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_wdata" type="array">
+      <obj_property name="ElementShortName">s00_axi_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_wstrb" type="array">
+      <obj_property name="ElementShortName">s00_axi_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_araddr" type="array">
+      <obj_property name="ElementShortName">s00_axi_araddr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_araddr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/s00_axi_rdata" type="array">
+      <obj_property name="ElementShortName">s00_axi_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/CR" type="array">
+      <obj_property name="ElementShortName">CR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/PSC" type="array">
+      <obj_property name="ElementShortName">PSC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PSC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/ARR" type="array">
+      <obj_property name="ElementShortName">ARR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ARR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/CNT" type="array">
+      <obj_property name="ElementShortName">CNT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CNT[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/C_S00_AXI_DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">C_S00_AXI_DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">C_S00_AXI_DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/C_S00_AXI_ADDR_WIDTH" type="array">
+      <obj_property name="ElementShortName">C_S00_AXI_ADDR_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">C_S00_AXI_ADDR_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/TMR_CR_ADDR" type="array">
+      <obj_property name="ElementShortName">TMR_CR_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TMR_CR_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/TMR_PSC_ADDR" type="array">
+      <obj_property name="ElementShortName">TMR_PSC_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TMR_PSC_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/TMR_ARR_ADDR" type="array">
+      <obj_property name="ElementShortName">TMR_ARR_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TMR_ARR_ADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_axi_timer/TMR_CNT_ADDR" type="array">
+      <obj_property name="ElementShortName">TMR_CNT_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TMR_CNT_ADDR[31:0]</obj_property>
+   </wvobject>
+</wave_config>
