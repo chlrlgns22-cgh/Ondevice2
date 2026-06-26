@@ -1,0 +1,41 @@
+/*
+ * TMR.c
+ *
+ *  Created on: 2026. 6. 26.
+ *      Author: kccistc
+ */
+
+#include "TMR.h"
+
+void TMR_SetPSC(TMR_TypeDef_t *tmr,uint32_t psc)
+{
+	tmr->PSC = psc;
+}
+
+void TMR_GetPSC(TMR_TypeDef_t *tmr)
+{
+	return tmr->PSC;
+}
+
+void TMR_SetARR(TMR_TypeDef_t *tmr,uint32_t arr)
+{
+	tmr->ARR = arr;
+}
+
+void TMR_SetARR(TMR_TypeDef_t *tmr)
+{
+	return tmr->ARR;
+}
+
+void TMR_SetCNT(TMR_TypeDef_t *tmr,uint32_t cnt)
+{
+	tmr->CNT = cnt;
+}
+
+void TMR_GetCNT(TMR_TypeDef_t *tmr)
+{
+	return tmr->CNT;
+}
+
+
+void TMR_StartTimer(TMR_Type)

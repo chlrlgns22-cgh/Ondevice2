@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-module axi_timer_v1_0 #(
+module timer_v1_0 #(
     // Users to add parameters here
 
     // User parameters ends
@@ -50,10 +50,10 @@ module axi_timer_v1_0 #(
     wire [31:0] o_cnt;
 
     // Instantiation of Axi Bus Interface S00_AXI
-    axi_timer_v1_0_S00_AXI #(
+    timer_v1_0_S00_AXI #(
         .C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
         .C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
-    ) axi_timer_v1_0_S00_AXI_inst (
+    ) timer_v1_0_S00_AXI_inst (
         .cnt_en       (cnt_en),
         .intr_en      (intr_en),
         .psc          (psc),

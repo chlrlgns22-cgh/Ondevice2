@@ -69,11 +69,13 @@ module tb_axi_timer ();
         s00_axi_araddr  <= addr;
         s00_axi_arvalid <= 1'b1;
         s00_axi_rready  <= 1'b1;
-        @(posedge clk);
-        wait (s00_axi_rvalid);
+        wait (s00_axi_arready);
         @(posedge clk);
         s00_axi_arvalid <= 1'b0;
+        wait (s00_axi_rvalid);
+        @(posedge clk); 
         s00_axi_rready  <= 1'b0;
+        @(posedge clk);
     endtask  //automatic
 
     initial begin
@@ -94,6 +96,17 @@ module tb_axi_timer ();
 
         wait (intr);
         @(posedge clk);
+
+        #3000000;
+
+        repeat (5) @(posedge clk);
+
+        AXI_ReadData(TMR_CR_ADDR);
+        AXI_ReadData(TMR_PSC_ADDR);
+        AXI_ReadData(TMR_ARR_ADDR);
+        #3000000;
+        AXI_ReadData(TMR_CNT_ADDR);
+
         #1000;
         $finish;
     end

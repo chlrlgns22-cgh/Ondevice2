@@ -1,0 +1,13 @@
+/*
+ * UART.h
+ *
+ *  Created on: 2026. 6. 26.
+ *      Author: kccistc
+ */
+
+#ifndef SRC_HAL_UART_UART_H_
+#define SRC_HAL_UART_UART_H_
+
+
+
+#endif /* SRC_HAL_UART_UART_H_ */

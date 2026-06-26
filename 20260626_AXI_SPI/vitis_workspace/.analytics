@@ -1,0 +1,19 @@
+timestamp=[2026-06-26 20:49:47], mode=WORKBENCH_START, duration=0:00:04.645, duration_ms=4645, data={}
+timestamp=[2026-06-26 20:49:47], mode=WORKBENCH_UI_INIT, duration=0:00:00.317, duration_ms=317, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2026-06-26 20:49:51], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.177, duration_ms=3177, data={}
+timestamp=[2026-06-26 20:51:48], mode=APP_CREATION, duration=0:00:05.979, duration_ms=5979, data={name=StopWatch, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=axi_spi_wrapper, application_type=application}
+timestamp=[2026-06-26 20:58:00], mode=PLATFORM_GENERATION, duration=0:00:06.524, duration_ms=6524, data={name=axi_spi_wrapper}
+timestamp=[2026-06-26 20:58:01], mode=BUILD, duration=0:00:00.990, duration_ms=990, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:00:56], mode=BUILD, duration=0:00:02.507, duration_ms=2507, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:04:29], mode=BUILD, duration=0:00:00.173, duration_ms=173, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:07:05], mode=BUILD, duration=0:00:00.679, duration_ms=679, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:17:36], mode=BUILD, duration=0:00:00.695, duration_ms=695, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:18:43], mode=BUILD, duration=0:00:00.625, duration_ms=625, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:24:42], mode=BUILD, duration=0:00:00.878, duration_ms=878, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:25:50], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:36:46], mode=PLATFORM_GENERATION, duration=0:00:01.267, duration_ms=1267, data={name=axi_spi_wrapper}
+timestamp=[2026-06-26 21:36:52], mode=BUILD, duration=0:00:00.405, duration_ms=405, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:38:45], mode=BUILD, duration=0:00:00.939, duration_ms=939, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:47:35], mode=PLATFORM_GENERATION, duration=0:00:01.211, duration_ms=1211, data={name=axi_spi_wrapper}
+timestamp=[2026-06-26 21:51:02], mode=BUILD, duration=0:00:01.004, duration_ms=1004, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 21:54:32], mode=BUILD, duration=0:00:00.870, duration_ms=870, data={name=StopWatch, configuration=Debug, clean_build=false}

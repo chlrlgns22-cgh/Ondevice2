@@ -1,0 +1,43 @@
+timestamp=[2026-06-26 15:08:49], mode=WORKBENCH_START, duration=0:00:04.513, duration_ms=4513, data={}
+timestamp=[2026-06-26 15:08:50], mode=WORKBENCH_UI_INIT, duration=0:00:00.350, duration_ms=350, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2026-06-26 15:08:54], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.243, duration_ms=3243, data={}
+timestamp=[2026-06-26 15:11:13], mode=APP_CREATION, duration=0:00:05.986, duration_ms=5986, data={name=StopWatch, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2026-06-26 15:13:37], mode=PLATFORM_GENERATION, duration=0:00:05.813, duration_ms=5813, data={name=design_1_wrapper}
+timestamp=[2026-06-26 15:13:40], mode=BUILD, duration=0:00:02.999, duration_ms=2999, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 15:43:18], mode=BUILD, duration=0:00:00.297, duration_ms=297, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 15:44:18], mode=BUILD, duration=0:00:00.235, duration_ms=235, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:14:38], mode=BUILD, duration=0:00:00.432, duration_ms=432, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:14:58], mode=BUILD, duration=0:00:00.228, duration_ms=228, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:16:31], mode=BUILD, duration=0:00:00.424, duration_ms=424, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:17:50], mode=BUILD, duration=0:00:00.677, duration_ms=677, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:25:33], mode=BUILD, duration=0:00:00.417, duration_ms=417, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:26:03], mode=BUILD, duration=0:00:00.602, duration_ms=602, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:26:19], mode=BUILD, duration=0:00:00.851, duration_ms=851, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:28:24], mode=BUILD, duration=0:00:00.110, duration_ms=110, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:29:06], mode=BUILD, duration=0:00:00.613, duration_ms=613, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:29:39], mode=BUILD, duration=0:00:00.611, duration_ms=611, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:32:36], mode=BUILD, duration=0:00:00.858, duration_ms=858, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 16:33:06], mode=BUILD, duration=0:00:00.614, duration_ms=614, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:08:43], mode=BUILD, duration=0:00:00.422, duration_ms=422, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:09:13], mode=BUILD, duration=0:00:00.225, duration_ms=225, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:09:24], mode=BUILD, duration=0:00:00.238, duration_ms=238, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:09:37], mode=BUILD, duration=0:00:00.856, duration_ms=856, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:11:41], mode=BUILD, duration=0:00:00.234, duration_ms=234, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:11:57], mode=BUILD, duration=0:00:00.228, duration_ms=228, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:12:06], mode=BUILD, duration=0:00:00.857, duration_ms=857, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:14:28], mode=BUILD, duration=0:00:00.161, duration_ms=161, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:17:37], mode=BUILD, duration=0:00:00.669, duration_ms=669, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:29:22], mode=BUILD, duration=0:00:00.608, duration_ms=608, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:29:37], mode=BUILD, duration=0:00:00.681, duration_ms=681, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:30:19], mode=BUILD, duration=0:00:01.107, duration_ms=1107, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:30:49], mode=BUILD, duration=0:00:00.614, duration_ms=614, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:31:58], mode=BUILD, duration=0:00:00.669, duration_ms=669, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:32:23], mode=BUILD, duration=0:00:00.674, duration_ms=674, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:32:45], mode=BUILD, duration=0:00:00.657, duration_ms=657, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:33:07], mode=BUILD, duration=0:00:00.668, duration_ms=668, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:35:38], mode=BUILD, duration=0:00:00.851, duration_ms=851, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:36:36], mode=BUILD, duration=0:00:00.611, duration_ms=611, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:38:14], mode=BUILD, duration=0:00:00.665, duration_ms=665, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:40:17], mode=BUILD, duration=0:00:00.659, duration_ms=659, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:58:02], mode=BUILD, duration=0:00:01.034, duration_ms=1034, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-26 17:59:33], mode=BUILD, duration=0:00:00.110, duration_ms=110, data={name=StopWatch, configuration=Debug, clean_build=false}

@@ -1,0 +1,73 @@
+#include "xil_printf.h"
+#include "common/delay/delay.h"
+#include "ap/StopWatch.h"
+#include "common/interrupt/interrupt.h"
+#include "HAL/TMR/TMR.h"
+#include "HAL/UART/UART.h"
+#include "HAL/SPI/SPI.h"
+#include "HAL/GPIO/GPIO.h"
+#include "driver/Button/Button.h"
+
+typedef enum {
+    MODE_UART = 0,
+    MODE_SPI  = 1,
+    MODE_I2C  = 2
+} comm_mode_e;
+
+int main()
+{
+    TMR_SetPSC(TMR0, 100 - 1);
+    TMR_SetARR(TMR0, 1000 - 1);
+    TMR_StartInterrupt(TMR0);
+    TMR_StartTimer(TMR0);
+    UART_StartInterrupt(UART0);
+
+    SPI_Init();
+
+    StopWatch_Init();
+    SetupInterruptSystem();
+
+    // GPIOE 입력 모드 (스위치)
+    GPIO_SetMode(GPIOE, 0xff);
+
+    while (1) {
+        // 스위치 모드 읽기
+        comm_mode_e mode = (comm_mode_e)(GPIO_ReadPort(GPIOE) & 0x03);
+
+        StopWatch_Excute();
+
+        // 왼쪽 버튼 → RUN/STOP
+        if (Button_GetState(&hbtnLeft) == ACT_RELEASED) {
+            switch (mode) {
+            case MODE_UART:
+                UART_Transmit(UART0, 'r');
+                break;
+            case MODE_SPI:
+                SPI_Transmit('r');  // ISR에서 LED 토글 + rx_data 처리
+                break;
+            case MODE_I2C:
+                // 추후 추가
+                break;
+            default:
+                break;
+            }
+        }
+
+        // 오른쪽 버튼 → CLEAR
+        if (Button_GetState(&hbtnRight) == ACT_RELEASED) {
+            switch (mode) {
+            case MODE_UART:
+                UART_Transmit(UART0, 'c');
+                break;
+            case MODE_SPI:
+                SPI_Transmit('c');
+                break;
+            case MODE_I2C:
+                break;
+            default:
+                break;
+            }
+        }
+    }
+    return 0;
+}

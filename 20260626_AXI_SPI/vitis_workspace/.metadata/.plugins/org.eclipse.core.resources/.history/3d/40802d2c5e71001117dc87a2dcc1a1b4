@@ -1,0 +1,34 @@
+/*
+ * SPI.c
+ *
+ *  Created on: 2026. 6. 26.
+ *      Author: kccistc
+ */
+
+#include "SPI.h"
+
+void SPI_Init(void)
+{
+    // CPOL=0, CPHA=0, clk_div=49
+    SPI_MASTER->CR = (SPI_CLK_DIV << 8) | 0x00;
+    SPI_SLAVE->TDR = 'a';
+}
+
+void SPI_Transmit(uint8_t data)
+{
+    SPI_SLAVE->TDR = 'a';
+    SPI_MASTER->TDR = data;
+    SPI_MASTER->CR = (SPI_CLK_DIV << 8) | 0x01;  // start
+    while (SPI_MASTER->SR & SPI_SR_BUSY);          // busy 대기
+    // 완료 후 ISR에서 처리
+}
+
+uint8_t SPI_MasterReceive(void)
+{
+    return (uint8_t)(SPI_MASTER->RDR & 0xFF);
+}
+
+uint8_t SPI_SlaveReceive(void)
+{
+    return (uint8_t)(SPI_SLAVE->RDR & 0xFF);
+}

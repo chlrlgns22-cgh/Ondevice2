@@ -1,0 +1,21 @@
+/*
+ * interrupt.c
+ *
+ *  Created on: 2026. 6. 26.
+ *      Author: kccistc
+ */
+
+#include "interrupt.h"
+#include "xparameters.h"
+
+#define INTC_DEV_ID XPAR_INTC_0_DEVICE_ID
+
+XIntc IntrController;
+
+int SetupInterruptSystem()
+{
+	int status;
+
+	//1. 인터럽트 컨트롤러 초기화
+	status = XIntc_Initialize(&IntrController,INTC_DEV_ID);
+}

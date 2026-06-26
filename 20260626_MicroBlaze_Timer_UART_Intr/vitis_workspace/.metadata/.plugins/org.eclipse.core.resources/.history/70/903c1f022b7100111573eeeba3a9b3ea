@@ -1,0 +1,15 @@
+/*
+ * TMR.c
+ *
+ *  Created on: 2026. 6. 26.
+ *      Author: kccistc
+ */
+
+#include "TMR.h"
+
+typedef struct{
+	uint32_t CR;
+	uint32_t PSC;
+	uint32_t ARR;
+	uint32_t CNT;
+};

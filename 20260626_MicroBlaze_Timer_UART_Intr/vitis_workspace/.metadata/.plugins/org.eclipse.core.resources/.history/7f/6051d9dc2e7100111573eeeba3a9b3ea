@@ -1,0 +1,64 @@
+/*
+ * interrupt.c
+ *
+ *  Created on: 2026. 6. 26.
+ *      Author: kccistc
+ */
+
+#include "interrupt.h"
+#include "xparameters.h"
+#include "xintc.h"
+
+XIntc IntrController;
+
+void TMR_ISR(void *CallbackRef)
+{
+
+}
+
+void UART_ISR(void *CallbackRef)
+{
+
+}
+
+int SetupInterruptSystem()
+{
+	int status;
+
+	//1. **변경 없음. 인터럽트 컨트롤러 초기화
+	status = XIntc_Initialize(&IntrController, INTC_DEV_ID);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+	//2-1. TMR_ISR 함수를 Intc와 연결
+	status = XIntc_Connect(&IntrController, TMR_DEV_ID,
+			(XInterruptHandler) TMR_ISR, (void*) 0);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	//2-2. UART_ISR 함수를 Intc와 연결
+	status = XIntc_Connect(&IntrController, UART_DEV_ID,
+			(XInterruptHandler) UART_ISR, (void*) 0);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	//3.**변경 없음. Interrupt Controller 시작 (Hardware Mode)
+	status = XIntc_Start(&IntrController, XIN_REAL_MODE);
+	if (status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	//4. 각각의 인터럽트 채널 활성화
+	XIntc_Enable(&IntrController, TMR_DEV_ID);
+	XIntc_Enable(&IntrController, UART_DEV_ID);
+
+	// 5. **변경 없음. Microblaze의 Exception 초기화 및 활성화
+	Xil_ExceptionInit();
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+			(Xil_ExceptionHandler) XIntc_InterruptHandler, &IntrController);
+	Xil_ExceptionEnable();
+
+	retunr XST_SUCCESS;
+}

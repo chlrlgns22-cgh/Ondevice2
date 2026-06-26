@@ -1,0 +1,25 @@
+#include "xil_printf.h"
+#include "common/delay/delay.h"
+#include "ap/StopWatch.h"
+#include "common/interrupt/interrupt.h"
+
+
+int main()
+{
+	TMR_SetPSC(TMR0, 100-1);
+	TMR_SetARR(TMR0, 1000-1);
+	TMR_StartInterrupt(TMR0);
+	TMR_StartTimer(TMR0);
+	StopWatch_Init();
+	SetupInterruptSystem();
+
+	while (1) {
+		StopWatch_Excute();
+
+		/************ polling service routine ****************/
+		FND_Excute();
+		incTick();
+		delay_ms(1);
+	}
+	return 0;
+}

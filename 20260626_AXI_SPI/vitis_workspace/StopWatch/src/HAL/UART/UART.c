@@ -1,0 +1,37 @@
+/*
+ * UART.c
+ *
+ *  Created on: 2026. 6. 26.
+ *      Author: kccistc
+ */
+
+#include "UART.h"
+
+
+
+void UART_StartInterrupt(UART_TypeDef_t *uart)
+{
+	uart->CR |= 1 << 0;
+}
+
+void UART_StopInterrupt(UART_TypeDef_t *uart)
+{
+	uart->CR &= ~(1<<0);
+}
+
+void UART_Transmit(UART_TypeDef_t *uart, uint8_t data)
+{
+	if (!(uart->SR & (1 << 0)));
+		uart->TDR = data;
+}
+
+uint8_t UART_Receive(UART_TypeDef_t *uart)
+{
+	if (!(uart->SR & (1 << 1)));
+		return (uint8_t) (uart->RDR);
+}
+
+uint8_t UART_RxAvalable(UART_TypeDef_t *uart)
+{
+	return uart->SR & (1<<1);
+}

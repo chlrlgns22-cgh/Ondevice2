@@ -188,3 +188,6 @@ timestamp=[2026-06-25 10:41:57], mode=BUILD, duration=0:00:00.866, duration_ms=8
 timestamp=[2026-06-25 10:44:15], mode=BUILD, duration=0:00:00.674, duration_ms=674, data={name=StopWatch, configuration=Debug, clean_build=false}
 timestamp=[2026-06-25 10:44:37], mode=BUILD, duration=0:00:00.674, duration_ms=674, data={name=StopWatch, configuration=Debug, clean_build=false}
 timestamp=[2026-06-25 10:45:23], mode=BUILD, duration=0:00:00.666, duration_ms=666, data={name=StopWatch, configuration=Debug, clean_build=false}
+timestamp=[2026-06-25 17:19:11], mode=WORKBENCH_START, duration=0:00:10.184, duration_ms=10184, data={}
+timestamp=[2026-06-25 17:19:12], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.075, duration_ms=75, data={}
+timestamp=[2026-06-25 17:19:12], mode=WORKBENCH_UI_INIT, duration=0:00:00.870, duration_ms=870, data={editors_count=14, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,StopWatch,StopWatch_design_wrapper,StopWatch_system}
