@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../20260825_VGA_Switch_RGB.srcs/sources_1/new/VGA_Decoder.sv" \
+"../../../../20260825_VGA_Switch_RGB.srcs/sources_1/new/VGA_RGB_SW.sv" \
+"../../../../20260825_VGA_Switch_RGB.srcs/sources_1/new/VGA_SW_Top.sv" \
+"../../../../20260825_VGA_Switch_RGB.srcs/sim_1/new/tb_VGA_SW_top.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
