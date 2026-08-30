@@ -14,6 +14,8 @@ module top_OV7670 #(
     input logic cam_vsync,
     input logic [7:0] cam_data,
     output logic xclk,
+    output logic scl,
+    inout logic sda,
     //vga side
     output logic h_sync,
     output logic v_sync,
@@ -97,6 +99,13 @@ module top_OV7670 #(
         .o_h_sync(h_sync),
         .o_v_sync(v_sync),
         .o_rgb   ({port_red, port_green, port_blue})
+    );
+
+    sccb_controller U_SCCB_CONTROLLER (
+        .clk(clk),
+        .rst(rst),
+        .scl(scl),
+        .sda(sda)
     );
 endmodule
 

@@ -2,7 +2,7 @@
 
 module I2C_Master_top (
     input logic clk,
-    input logic reset,
+    input logic rst,
     // command port
     input logic cmd_start,
     input logic cmd_write,
@@ -33,7 +33,7 @@ endmodule
 
 module I2C_Master (
     input logic clk,
-    input logic reset,
+    input logic rst,
     // command port
     input logic cmd_start,
     input logic cmd_write,
@@ -77,8 +77,8 @@ module I2C_Master (
     assign sda_o = sda_r;
     assign busy  = (state != IDLE);
 
-    always_ff @(posedge clk, posedge reset) begin
-        if (reset) begin
+    always_ff @(posedge clk, posedge rst) begin
+        if (rst) begin
             div_cnt  <= 0;
             qtr_tick <= 1'b0;
         end else begin
@@ -92,8 +92,8 @@ module I2C_Master (
         end
     end
 
-    always_ff @(posedge clk, posedge reset) begin
-        if (reset) begin
+    always_ff @(posedge clk, posedge rst) begin
+        if (rst) begin
             state        <= IDLE;
             scl_r        <= 1'b1;
             sda_r        <= 1'b1;
